@@ -1,0 +1,44 @@
+<%- include('head', { title: 'Smartphone' }) %>
+<body>
+    <head>
+       <%- include('nav') %>
+        <!-- end of navbar -->
+    </head>
+    <main class="container p-0">
+        <!-- carousel -->
+
+        <section class="carousel mt-2">
+            <%- include('carousel') %>
+        </section>
+        <!-- end of carousel -->
+        <div class="filter bg-light">
+            <div class="path pt-2 mb-1 ml-3 smaller">
+                <% urls.forEach( (url, index, urls) => { %>
+                    <% if(index === urls.length - 1){ %>
+                        <a href=<%= url.link %> ><%= url.name %>.</a>   
+                    <% } %>
+                    <% if(index < urls.length -1){ %>
+                        <a class="text-dark" href=<%= url.link %> ><%= url.name %>/</a>
+                    <% } %>
+                <%}) %>
+            </div>
+            <%- include('phone-brands', { isActive: isActive }) %>
+            <%- include('price-filter', { url: urls[urls.length - 1].link, priceActive: priceActive }) %>
+        </div>
+        <section class="SoldOut pb-4">
+            <div class="title mb-3 text-center">
+                <h5 class="text-light"><%=brand %></h5>
+            </div>
+            <div class="results ml-3 mb-4 text-danger">
+                Có: <%= products.length %> kết quả.
+            </div>
+            <div class="ListProduct">
+                <% products.forEach(function(product){ %>
+                    <%- include('card', {product: product}); %>
+                <% }); %>
+            </div>
+        </section>
+    </main>
+    <%- include('footer') %>
+</body>
+</html>

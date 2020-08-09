@@ -1,0 +1,51 @@
+<div class="row mb-3">
+    <div class="col">
+        <ul class=" m-0 price-filter d-flex justify-content-around align-items-center">
+            <%  let price = ['','','','',''];
+                switch (priceActive) {
+                    case 'duoi-2-trieu':
+                        price[0] = "text-danger";
+                        break;
+                    case 'tu-2-4-trieu':
+                        price[1] = "text-danger";
+                        break;
+                    case 'tu-4-7-trieu':
+                        price[2] = "text-danger";
+                        break;
+                    case 'tu-7-13-trieu':
+                        price[3] = "text-danger";
+                        break; 
+                    default:
+                        price[4] = "text-danger";
+                        break;   
+                }
+            %> 
+            <label class="text-center m-0">Chọn mức giá:</label>
+            <li>
+                <a <%= price[0] %> href= <%= url + "?q=duoi-2-trieu" %> >
+                    Dưới 2 triệu
+                </a>
+            </li>
+           <li>
+                <a  <%= price[1] %> href=<%= url + "?q=tu-2-4-trieu" %>>
+                    Từ 2 đến 4 triệu
+                </a>
+            </li>
+           <li>
+                <a  <%= price[2] %> href=<%= url + "?q=tu-4-7-trieu" %>>
+                    Từ 4 đến 7 triệu
+                </a>
+            </li>
+           <li>
+                <a  <%= price[3] %> href=<%= url + "?q=tu-7-13-trieu" %>>
+                    Từ 7 đến 13 triệu
+                </a>
+            </li>
+           <li>
+                <a  <%= price[4] %> href=<%= url + "?q=tren-13-trieu" %>>
+                    Trên 13 triệu
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

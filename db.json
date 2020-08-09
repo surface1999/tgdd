@@ -1,0 +1,164 @@
+{
+  "products": [
+    {
+      "img": "/img/product/note8.png",
+      "name": "Samsung Galaxy Note 8",
+      "price": "21.990.000 "
+    },
+    {
+      "img": "/img/product/ipX.jpg",
+      "name": "Apple Iphone X",
+      "price": "29.990.000"
+    },
+    {
+      "img": "/img/product/s8.jpg",
+      "name": "Samsung Galaxy S8",
+      "price": "18.490.000"
+    },
+    {
+      "img": "/img/product/f11.jpg",
+      "name": "Oppo F11 Pro",
+      "price": "6.990.000"
+    },
+    {
+      "img": "/img/product/note7.png",
+      "name": "Samsung Galaxy Note 7",
+      "price": "18.990.000"
+    },
+    {
+      "img": "/img/product/ip8.jpg",
+      "name": "Apple Iphone 8",
+      "price": "22.990.000"
+    },
+    {
+      "img": "/img/product/mate30.jpg",
+      "name": "Huawei Mate 30 Pro",
+      "price": "20.990.000"
+    },
+    {
+      "img": "/img/product/s7.png",
+      "name": "Samsung Galaxy S7 Edge",
+      "price": "18.490.000"
+    },
+    {
+      "img": "/img/product/note8.png",
+      "name": "Samsung Galaxy Note 9",
+      "price": "22.990.000 "
+    },
+    {
+      "img": "/img/product/ipX.jpg",
+      "name": "Apple Iphone Xs Max",
+      "price": "40.990.000"
+    },
+    {
+      "img": "/img/product/s8.jpg",
+      "name": "Samsung Galaxy S9 Plus",
+      "price": "21.490.000"
+    },
+    {
+      "img": "/img/product/f11.jpg",
+      "name": "Oppo Reno 2F",
+      "price": "8.990.000"
+    },
+    {
+      "img": "/img/product/note7.png",
+      "name": "Vivo 3X Pro",
+      "price": "10.990.000"
+    },
+    {
+      "img": "/img/product/ip8.jpg",
+      "name": "Realme 3 Pro",
+      "price": "4.990.000"
+    },
+    {
+      "img": "/img/product/mate30.jpg",
+      "name": "Huawei P30 Pro",
+      "price": "20.990.000"
+    },
+    {
+      "img": "/img/product/s7.png",
+      "name": "Samsung Galaxy S6",
+      "price": "18.490.000"
+    },
+    {
+      "img": "/img/product/note8.png",
+      "name": "Samsung Galaxy Note 8",
+      "price": "21.990.000 "
+    },
+    {
+      "img": "/img/product/ipX.jpg",
+      "name": "Apple Iphone X",
+      "price": "29.990.000"
+    },
+    {
+      "img": "/img/product/s8.jpg",
+      "name": "Samsung Galaxy S8",
+      "price": "18.490.000"
+    },
+    {
+      "img": "/img/product/f11.jpg",
+      "name": "Oppo F11 Pro",
+      "price": "6.990.000"
+    },
+    {
+      "img": "/img/product/note7.png",
+      "name": "Samsung Galaxy Note 7",
+      "price": "18.990.000"
+    },
+    {
+      "img": "/img/product/ip8.jpg",
+      "name": "Apple Iphone 8",
+      "price": "22.990.000"
+    },
+    {
+      "img": "/img/product/mate30.jpg",
+      "name": "Huawei Mate 30 Pro",
+      "price": "20.990.000"
+    },
+    {
+      "img": "/img/product/s7.png",
+      "name": "Samsung Galaxy S7 Edge",
+      "price": "18.490.000"
+    },
+    {
+      "img": "/img/product/note8.png",
+      "name": "Samsung Galaxy Note 9",
+      "price": "22.990.000 "
+    },
+    {
+      "img": "/img/product/ipX.jpg",
+      "name": "Apple Iphone Xs Max",
+      "price": "40.990.000"
+    },
+    {
+      "img": "/img/product/s8.jpg",
+      "name": "Samsung Galaxy S9 Plus",
+      "price": "21.490.000"
+    },
+    {
+      "img": "/img/product/f11.jpg",
+      "name": "Oppo Reno 2F",
+      "price": "8.990.000"
+    },
+    {
+      "img": "/img/product/note7.png",
+      "name": "Vivo 3X Pro",
+      "price": "10.990.000"
+    },
+    {
+      "img": "/img/product/ip8.jpg",
+      "name": "Realme 3 Pro",
+      "price": "4.990.000"
+    },
+    {
+      "img": "/img/product/mate30.jpg",
+      "name": "Huawei P30 Pro",
+      "price": "20.990.000"
+    },
+    {
+      "img": "/img/product/s7.png",
+      "name": "Samsung Galaxy S6",
+      "price": "18.490.000"
+    }
+  ]
+}

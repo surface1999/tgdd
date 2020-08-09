@@ -1,0 +1,43 @@
+<%- include('head', { title: 'Sold out' }) %>
+<body>
+    <head>
+       <%- include('nav.ejs', {isActive: isActive}) %>
+        <!-- end of navbar -->
+    </head>
+    <main class="container p-0">
+        <!-- carousel -->
+        <section class="carousel mt-2">
+            <div class="row">
+                <div class="col-md-8 pr-0">
+                   <%- include('carousel') %>
+                </div>
+                <div class="col-md-4 pl-2">
+                    <%- include('news') %>
+                </div>
+            </div>
+        </section>
+        <!-- end of carousel -->
+        <div class="mt-2 mb-1 ml-3 smaller">
+            <% urls.forEach( (url, index, urls) => { %>
+                <% if(index === urls.length - 1){ %>
+                    <a href=<%= url.link %> ><%= url.name %>.</a>   
+                <% } %>
+                <% if(index < urls.length -1){ %>
+                    <a class="text-dark" href=<%= url.link %> ><%= url.name %>/</a>
+                <% } %>
+            <%}) %>
+        </div>
+        <section class="SoldOut pb-4">
+            <div class="title mb-5 mt-2 text-center">
+                <h5 class="text-light">Sản phẩm bán chạy</h5>
+            </div>
+            <div class="ListProduct">
+                <% products.forEach(function(product){ %>
+                    <%- include('card', {product: product}); %>
+                <% }); %>
+            </div>
+        </section>
+    </main>
+    <%- include('footer') %>
+</body>
+</html>

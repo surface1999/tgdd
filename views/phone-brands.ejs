@@ -1,0 +1,60 @@
+<div class="row mb-3">
+    <div class="col">
+        <ul class=" m-0 phone-brands d-flex justify-content-around">
+            <% var iphone, samsung, oppo, realme, huawei, vivo, phone = ""; %>
+            <% switch (isActive) {
+                case 'iphone':
+                    iphone = "brand-active";
+                    break;
+                case 'samsung':
+                    samsung = "brand-active";
+                    break;
+                case 'oppo':
+                    oppo = "brand-active";
+                    break;
+                case 'huawei':
+                    huawei = "brand-active";
+                    break;
+                case 'realme':
+                    realme = "brand-active";
+                    break;
+                case 'vivo':
+                    vivo = "brand-active";
+                    break;
+                default:
+                    phone = "brand-active";
+                    break;
+             } %>
+            <li class =<%= iphone %> >
+                <a href="/phone/iphone">
+                    <img src="/img/logo/apple.png"  style=" height: 30px;" alt="">
+                </a>
+            </li>
+           <li class =<%= samsung %> >
+                <a href="/phone/samsung">
+                    <img src="/img/logo/samsung.png" style=" height: 30px;" alt="">
+                </a>
+            </li>
+           <li class =<%= oppo %> >
+                <a href="/phone/oppo">
+                    <img src="/img/logo/opp.png" style=" height: 30px;" alt="">
+                </a>
+            </li>
+           <li class =<%= huawei %> >
+                <a href="/phone/huawei">
+                    <img src="/img/logo/huawei.png" style=" height: 30px;" alt="">
+                </a>
+            </li>
+           <li class =<%= realme %> >
+                <a href="/phone/realme">
+                    <img src="/img/logo/realme.png" style=" height: 30px;" alt="">
+                </a>
+            </li>
+           <li class =<%= vivo %> >
+                <a href="/phone/vivo">
+                    <img src="/img/logo/vivo.png" style=" height: 30px;" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
