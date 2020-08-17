@@ -308,3 +308,13 @@ footer{
 .amount p{
     border-width: .2px 0;
 }
+
+.normal{
+    background-color: #ffff;
+    color: black;
+}
+
+.isChoose{
+    background-color: #af0606;
+    color: #ffff;
+}

@@ -9,6 +9,5 @@ module.exports = (req, res, next) => {
     res.locals.sessionId = req.signedCookies.sessionId;
     res.locals.oldUrl = !req.signedCookies.url? '': req.signedCookies.url;
     res.cookie('url', req.originalUrl, { signed: true } );
-    console.log(res.locals.oldUrl);
     next();
 }
