@@ -73,7 +73,7 @@ module.exports.cartDelete = (req, res) => {
     }
     else    
         DB.set('total', total - 1).write();
-        res.redirect('/cart/products');
+        res.redirect(res.locals.oldUrl);
 }
 module.exports.cartSubtract = (req, res) => {
     const productId = (req.params.id).replace(':', '');
@@ -81,14 +81,15 @@ module.exports.cartSubtract = (req, res) => {
     const DB = db.get('session').find({id: sessionId});
     var count = DB.get('cart.' + productId, 0).value();
     var total = DB.get('total', 0).value();
+    const cart = DB.get('cart').value();
     if(count - 1 === 0){
-        res.redirect('/cart/delete:' + productId);
+        delete cart[productId];
     }
     else{
         DB.set('cart.' + productId, count - 1).write();
-        DB.set('total', total - 1).write();
-        res.redirect(res.locals.oldUrl);
     }
+    DB.set('total', total - 1).write();
+    res.redirect(res.locals.oldUrl);
 
 }
 
