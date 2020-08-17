@@ -6,6 +6,7 @@
         <div class="title text-center text-light">
           <h5>Thanh toán</h5>
         </div>
+        <p class="text-danger mt-3 mb-1 ml-5">Có <%=listProducts.length%> sản phẩm. </p>
         <div class="infoCustomer" style="margin: 3rem 13rem; background-color: #ffff;">
           <div class="myCart" style="padding: 5rem 7rem;">
             <% listProducts.forEach((item)=>{ %>
@@ -27,11 +28,11 @@
                 </div>
             </div>
             <% }) %> 
-            <div class="d-flex justify-content-between align-items-center my-2">
-              <p class="font-weight-bold m-0">Cần thanh toán:</p>
-              <strong class="text-danger"><%= totalPrice %>&nbsp;đ</strong>
-            </div>
             <% if(listProducts.length !== 0){ %>
+              <div class="d-flex justify-content-between align-items-center my-2">
+                <p class="font-weight-bold m-0">Cần thanh toán:</p>
+                <strong class="text-danger"><%= totalPrice %>&nbsp;đ</strong>
+              </div>
               <div class="form mt-3 d-flex justify-content-center pt-3" style="flex-direction: column; border-top: .1px solid rgb(161, 153, 153);">
                 <div class="gender">
                   <input name="gioitinh" type="radio" value="Nam" />&nbsp;Nam

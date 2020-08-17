@@ -15,7 +15,8 @@
               <th scope="col">Giá</th>
             </tr>
           </thead>
-          <% if(listProducts !== undefined){ %>
+        <p class="text-danger mt-3 mb-1 ml-5">Có <%=listProducts.length%> sản phẩm. </p>
+          <% if(listProducts.length !== 0){ %>
             <% listProducts.forEach((item, index)=>{ %>
               <tbody>
                   <tr>
@@ -46,12 +47,14 @@
             </tfoot> 
           <% } %> 
       </table>
-      <div class="pay row pb-5">
-        <div class="col-md-9"></div>
-        <div class="col-md-3">
-          <a class="btn btn-danger" href="/cart/buy" role="button">Mua hàng</a>
+      <% if(listProducts.length !== 0){ %>
+        <div class="pay row pb-5">
+          <div class="col-md-9"></div>
+          <div class="col-md-3">
+            <a class="btn btn-danger" href="/cart/buy" role="button">Mua hàng</a>
+          </div>
         </div>
-      </div>
+      <% } %> 
 
       </div>
     </div>
