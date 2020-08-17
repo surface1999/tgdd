@@ -1,6 +1,6 @@
 <div class="card">
     <img src= <%=product.img%> class="mb-3" alt="">
     <a href="/link"><%=product.name%></a>
-    <p class="text-danger"><%=product.price%> đ</p>
-    <a href="#" class="btn cart-btn smaller">Thêm vào giỏ</a>
+    <strong class="text-danger my-2"><%=product.price%> đ</strong>
+    <a href=<%="/cart/add:" + product.id %> class="btn cart-btn smaller">Thêm vào giỏ</a>
 </div>

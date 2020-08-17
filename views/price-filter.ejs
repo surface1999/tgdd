@@ -4,19 +4,19 @@
             <%  let price = ['','','','',''];
                 switch (priceActive) {
                     case 'duoi-2-trieu':
-                        price[0] = "text-danger";
+                        price[0] = "class=text-danger";
                         break;
                     case 'tu-2-4-trieu':
-                        price[1] = "text-danger";
+                        price[1] = "class=text-danger";
                         break;
                     case 'tu-4-7-trieu':
-                        price[2] = "text-danger";
+                        price[2] = "class=text-danger";
                         break;
                     case 'tu-7-13-trieu':
-                        price[3] = "text-danger";
+                        price[3] = "class=text-danger";
                         break; 
-                    default:
-                        price[4] = "text-danger";
+                    case 'tren-13-trieu':
+                        price[4] = "class=text-danger";
                         break;   
                 }
             %> 

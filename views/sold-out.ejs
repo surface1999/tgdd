@@ -1,20 +1,13 @@
 <%- include('head', { title: 'Sold out' }) %>
 <body>
     <head>
-       <%- include('nav.ejs', {isActive: isActive}) %>
+       <%- include('nav.ejs', {isActive: isActive, totalCart: totalCart}) %>
         <!-- end of navbar -->
     </head>
     <main class="container p-0">
         <!-- carousel -->
         <section class="carousel mt-2">
-            <div class="row">
-                <div class="col-md-8 pr-0">
-                   <%- include('carousel') %>
-                </div>
-                <div class="col-md-4 pl-2">
-                    <%- include('news') %>
-                </div>
-            </div>
+            <%- include('carousel') %>
         </section>
         <!-- end of carousel -->
         <div class="mt-2 mb-1 ml-3 smaller">

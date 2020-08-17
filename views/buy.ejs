@@ -1,0 +1,56 @@
+<%- include('head', { title: 'List Cart' })  %> 
+<body>
+    <%- include('nav', { totalCart: totalCart } ) %> 
+    <div class="container mt-4 p-0 pb-2">
+      <div class="listCarts">
+        <div class="title text-center text-light">
+          <h5>Thanh toán</h5>
+        </div>
+        <div class="infoCustomer" style="margin: 3rem 13rem; background-color: #ffff;">
+          <div class="myCart" style="padding: 5rem 7rem;">
+            <% listProducts.forEach((item)=>{ %>
+              <div class="product row d-flex align-items-center"  style="height: 8rem;" >
+                <div class="col-md-3">
+                  <img src=<%= item.product.img %> alt="product" style="width: 100px;">
+                </div>
+                <div class="col-md-5">
+                  <p class="name"><%= item.product.name %></p>
+                  <p class="text-danger"><%= item.product.total %> đ</p>
+                </div>
+                <div class="col-md-4 d-flex align-items-center justify-content-between">
+                  <div class="amount d-flex justify-content-center align-items-center">
+                    <a href=<%= "/cart/subtract:" +  item.product.id  %>  class="m-0">-</a>
+                    <p class="m-0"><%= item.count %></p>
+                    <a href=<%= "/cart/add:" +  item.product.id  %> class="m-0">+</a>
+                  </div>
+                  <a href=<%= "/cart/delete:" +  item.product.id  %>><i class="far fa-times-circle text-danger" style="font-size: 25px;"></i></a>
+                </div>
+            </div>
+            <% }) %> 
+            <div class="d-flex justify-content-between align-items-center my-2">
+              <p class="font-weight-bold m-0">Cần thanh toán:</p>
+              <strong class="text-danger"><%= totalPrice %>&nbsp;đ</strong>
+            </div>
+            <% if(listProducts.length !== 0){ %>
+              <div class="form mt-3 d-flex justify-content-center pt-3" style="flex-direction: column; border-top: .1px solid rgb(161, 153, 153);">
+                <div class="gender">
+                  <input name="gioitinh" type="radio" value="Nam" />&nbsp;Nam
+                  <input class="ml-3" name="gioitinh" type="radio" value="Nữ" />&nbsp;Nữ
+                </div>
+                <div class="d-flex justify-content-between mt-2">
+                  <input type="text" class="pl-2 smaller" style="width: 49%!important; height: 2rem;" placeholder="Họ tên" >
+                  <input type="text" class="pl-2 smaller"  style="width: 49.5%!important; height: 2rem;" placeholder="Số Điện Thoại" >
+                </div>
+                <input type="text" class="mt-3 smaller pl-2"  style="width: 100%!important; height: 2rem;" placeholder="Địa Chỉ" >
+                <button type="submit" class="btn btn-danger mt-3">Đặt hàng</button>
+              </div>
+            <% } %> 
+
+          </div>
+   
+        </div>
+
+    </div>
+</body>
+</html>
+

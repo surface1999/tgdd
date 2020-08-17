@@ -25,7 +25,10 @@
                 </ul>
             </li>
             <li class="nav-link"><a><i class="fas fa-id-card-alt nav-icon"></i>Chính sách bảo hành</a></li>
-            <li class="nav-link"><a><i class="fas fa-cart-plus cart-icon"></i></a></li>
+            <li class="cart mr-3">
+                <a href="/cart/products"><i class="fas fa-cart-plus cart-icon text-light"></i></a>
+            <div class="count"><%=totalCart !== undefined? totalCart: ''%></div>
+            </li>
         </ul>
     </div>
 </nav>

@@ -1,15 +1,11 @@
-
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
-
-const adapter = new FileSync('db.json');
-const db = low(adapter);
+const db = require('../db');
 
 let title = "Hãng sản xuất:   ";
 let phone = {
     name: 'Phone',
     link: '/phone'
 }
+
 
 uncodePrice = (price)=>{
     while(price.indexOf('.') !== -1){
@@ -52,6 +48,7 @@ filterPrice = (q, products) => {
     }
 }
 module.exports.samsung = (req, res) =>{
+    let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
     let urls = [
         phone,
         {
@@ -72,12 +69,14 @@ module.exports.samsung = (req, res) =>{
                                     urls: urls,
                                     brand: title + 'Samsung',
                                     products: products,
-                                    priceActive: q !== undefined? q: ''
+                                    priceActive: q !== undefined? q: '',
+                                    totalCart: totalCart 
                                 }
                 );
 }
 
 module.exports.iphone = (req, res) =>{
+    let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
     let urls = [
         phone,
         {
@@ -98,11 +97,13 @@ module.exports.iphone = (req, res) =>{
                                     urls: urls,
                                     brand: title + 'Iphone',
                                     products: products,
-                                    priceActive: q !== undefined? q: ''
+                                    priceActive: q !== undefined? q: '',
+                                    totalCart: totalCart 
                                 });
 }
 
 module.exports.oppo = (req, res) =>{
+    let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
     let urls = [
         phone,
         {
@@ -122,11 +123,13 @@ module.exports.oppo = (req, res) =>{
                                     urls: urls,
                                     brand: title + 'Oppo',
                                     products: products,
-                                    priceActive: q !== undefined? q: ''
+                                    priceActive: q !== undefined? q: '',
+                                    totalCart: totalCart 
                                 });
 }
 
 module.exports.vivo = (req, res) =>{
+    let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
     let urls = [
         phone,
         {
@@ -146,11 +149,13 @@ module.exports.vivo = (req, res) =>{
                                     urls: urls,
                                     brand: title + 'Vivo',
                                     products: products,
-                                    priceActive: q !== undefined? q: ''
+                                    priceActive: q !== undefined? q: '',
+                                    totalCart: totalCart 
                                 });
 }
 
 module.exports.huawei = (req, res) =>{
+    let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
     let urls = [
         phone,
         {
@@ -170,11 +175,13 @@ module.exports.huawei = (req, res) =>{
                                     urls: urls,
                                     brand: title + 'Huawei',
                                     products: products,
-                                    priceActive: q !== undefined? q: ''
+                                    priceActive: q !== undefined? q: '',
+                                    totalCart: totalCart 
                                 });
 }
 
 module.exports.realme = (req, res) =>{
+    let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
     let urls = [
         phone,
         {
@@ -195,11 +202,13 @@ module.exports.realme = (req, res) =>{
                                     urls: urls,
                                     brand: title + 'Realme',
                                     products: products,
-                                    priceActive: q !== undefined? q: ''
+                                    priceActive: q !== undefined? q: '',
+                                    totalCart: totalCart 
                                 });
 }
 
 module.exports.search = (req, res) =>{
+    let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
     let urls = [
         phone,
         {
@@ -211,16 +220,20 @@ module.exports.search = (req, res) =>{
     let products = db.get('products').value().filter((product)=>{
         return product.name.toLowerCase().indexOf(key.toLowerCase()) !== -1;
     });
+
+    
     res.render('brand-filter', { 
                                     isActive: 'phone',
                                     urls: urls,
                                     brand: 'Tìm kiếm từ khóa:  ' + key,
                                     products: products,
-                                    priceActive: q !== undefined? q: ''
+                                    priceActive: '',
+                                    totalCart: totalCart 
                                 });
 }
 
 module.exports.phone = (req, res) =>{
+    let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
     let urls = [
         phone,
     ];
@@ -234,6 +247,7 @@ module.exports.phone = (req, res) =>{
                                     urls: urls,
                                     brand: 'Smart Phone',
                                     products: products,
-                                    priceActive: q !== undefined? q: ''
+                                    priceActive: q !== undefined? q: '',
+                                    totalCart: totalCart 
                                 });
 }
