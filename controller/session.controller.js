@@ -29,6 +29,7 @@ module.exports.cartController = (req, res) => {
 module.exports.listProducts = (req, res) => {
     const DB = db.get('session').find({id: res.locals.sessionId});
     let totalCart = DB.get('total');
+    let listProducts = [];
     if(DB.get('cart').value() !== undefined){
         let cart = DB.get('cart').value(); 
         let ids = Object.keys(cart);
@@ -40,7 +41,6 @@ module.exports.listProducts = (req, res) => {
             product.amount =  cart[id];
             product.total = numberWithCommas( uncodePrice(product.price) * cart[id] );
         })
-        let listProducts = [];
         let totalPrice = products.reduce((total, product)=>{
             return uncodePrice(product.price) * product.amount + total;
         }, 0);
@@ -54,7 +54,7 @@ module.exports.listProducts = (req, res) => {
         res.render('listCarts', {listProducts: listProducts, totalCart: totalCart, totalPrice: numberWithCommas(totalPrice) });
         return;
     }
-    res.render('listCarts', {listProducts: undefined, totalCart: totalCart});
+    res.render('listCarts', {listProducts: listProducts, totalCart: totalCart});
 
 
 
@@ -96,6 +96,7 @@ module.exports.cartSubtract = (req, res) => {
 module.exports.buy = (req, res) => {
     const DB = db.get('session').find({id: res.locals.sessionId});
     let totalCart = DB.get('total');
+    let listProducts = [];
     if(DB.get('cart').value() !== undefined){
         let cart = DB.get('cart').value(); 
         let ids = Object.keys(cart);
@@ -107,7 +108,6 @@ module.exports.buy = (req, res) => {
             product.amount =  cart[id];
             product.total = numberWithCommas( uncodePrice(product.price) * cart[id] );
         })
-        let listProducts = [];
         let totalPrice = products.reduce((total, product)=>{
             return uncodePrice(product.price) * product.amount + total;
         }, 0);
@@ -121,5 +121,5 @@ module.exports.buy = (req, res) => {
         res.render('buy', {listProducts: listProducts, totalCart: totalCart, totalPrice: numberWithCommas(totalPrice) });
         return;
     }
-    res.render('buy', {listProducts: undefined, totalCart: totalCart});
+    res.render('buy', {listProducts: listProducts, totalCart: totalCart});
 }
