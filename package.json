@@ -17,7 +17,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --inspect app"
+    "dev": "nodemon --inspect app",
+    "start": "node app.jsnpm install -g nodemon"
   },
   "author": "",
   "license": "ISC"
