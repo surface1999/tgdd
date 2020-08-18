@@ -28,5 +28,5 @@ app.use('/cart', sessionRouter);
 app.get('seach');
 var port = process.env.PORT || 3000;
 app.listen(port, ()=>{
-    console.log("App is running on port" + port);
+    console.log("App is running on port " + port);
 })
