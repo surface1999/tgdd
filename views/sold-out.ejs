@@ -29,6 +29,16 @@
                     <%- include('card', {product: product}); %>
                 <% }); %>
             </div>
+            <div class="amount d-flex justify-content-center align-items-center my-3">
+                <% for( var i = 1; i<= countPages; i++){
+                        let a = 'normal' ;
+                        if(i === active){
+                            a = 'isChoose' ;
+                        }
+                %> 
+                    <a class=<%= a %> href= <%= "/sold-out?p=" + i %> ><%= i %> </a>
+                <% } %> 
+            </div>  
         </section>
     </main>
     <%- include('footer') %>

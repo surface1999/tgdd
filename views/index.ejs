@@ -36,17 +36,7 @@
                 <% products.forEach(function(product){ %>
                     <%- include('card', {product: product}); %>
                 <% }); %>
-            </div>
-            <div class="amount d-flex justify-content-center align-items-center my-3">
-                <% for( var i = 1; i<= countPages; i++){
-                        let a = 'normal' ;
-                        if(i === active){
-                            a = 'isChoose' ;
-                        }
-                %> 
-                    <a class=<%= a %> href= <%= "/?p=" + i %> ><%= i %> </a>
-                <% } %> 
-            </div>           
+            </div>         
         </section>
         <!-- New -->
         <section class="SoldOut pb-4">
