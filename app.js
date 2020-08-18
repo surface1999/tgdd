@@ -25,7 +25,8 @@ app.use('/', homeRouter);
 app.use('/sold-out', soldOutRouter);
 app.use('/phone', phoneRouter);
 app.use('/cart', sessionRouter);
-app.get('seach')
-app.listen(process.env.PORT || 3000, ()=>{
-    console.log("App is running on port 3000");
+app.get('seach');
+var port = process.env.PORT || 3000;
+app.listen(port, ()=>{
+    console.log("App is running on port" + port);
 })
