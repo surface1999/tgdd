@@ -18,7 +18,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --inspect app",
-    "start": "node app.jsnpm install -g nodemon"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC"
