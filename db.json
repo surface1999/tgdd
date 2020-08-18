@@ -5,8 +5,8 @@
       "name": "Samsung Galaxy Note 8",
       "price": "21.990.000 ",
       "id": "kUQ4Z6HO3Y",
-      "amount": 2,
-      "total": "43,980,000"
+      "amount": 1,
+      "total": "21,990,000"
     },
     {
       "img": "/img/product/ipX.jpg",
@@ -21,8 +21,8 @@
       "name": "Samsung Galaxy S8",
       "price": "18.490.000",
       "id": "V67phbyWXH",
-      "amount": 1,
-      "total": "18,490,000"
+      "amount": 2,
+      "total": "36,980,000"
     },
     {
       "img": "/img/product/f11.jpg",
@@ -37,8 +37,8 @@
       "name": "Samsung Galaxy Note 7",
       "price": "18.990.000",
       "id": "kiAlTiibeT",
-      "amount": 1,
-      "total": "18,990,000"
+      "amount": 3,
+      "total": "56,970,000"
     },
     {
       "img": "/img/product/ip8.jpg",
@@ -53,24 +53,24 @@
       "name": "Huawei Mate 30 Pro",
       "price": "20.990.000",
       "id": "vwhL605ygk",
-      "amount": 2,
-      "total": "41,980,000"
+      "amount": 35,
+      "total": "734,650,000"
     },
     {
       "img": "/img/product/s7.png",
       "name": "Samsung Galaxy S7 Edge",
       "price": "18.490.000",
       "id": "HUZ87MceOx",
-      "amount": 2,
-      "total": "36,980,000"
+      "amount": 1,
+      "total": "18,490,000"
     },
     {
       "img": "/img/product/note8.png",
       "name": "Samsung Galaxy Note 9",
       "price": "22.990.000 ",
       "id": "onFtzb8nci",
-      "amount": 120,
-      "total": "2,758,800,000"
+      "amount": 1,
+      "total": "22,990,000"
     },
     {
       "img": "/img/product/ipX.jpg",
@@ -93,8 +93,8 @@
       "name": "Oppo Reno 2F",
       "price": "8.990.000",
       "id": "gqpRidMW9M",
-      "amount": 6,
-      "total": "53,940,000"
+      "amount": 2,
+      "total": "17,980,000"
     },
     {
       "img": "/img/product/note7.png",
@@ -418,11 +418,49 @@
     },
     {
       "id": "kWfFLjLPBg",
-      "total": 2,
+      "total": -78,
       "cart": {
-        "u1l9sZXzZD": 1,
         "IfkDMyCcLK": 1
       }
+    },
+    {
+      "id": "gupE96N2Jr",
+      "total": 42,
+      "cart": {
+        "kiAlTiibeT": 42
+      }
+    },
+    {
+      "id": "Av2IOcKHdk",
+      "total": 0
+    },
+    {
+      "id": "2nmXgwxEI0",
+      "total": 0,
+      "cart": {}
+    },
+    {
+      "id": "nDbiD0MxWh",
+      "total": -42,
+      "cart": {}
+    },
+    {
+      "id": "5cma6nFx9k",
+      "total": -2,
+      "cart": {}
+    },
+    {
+      "id": "FoJOPLbDpO",
+      "total": 36,
+      "cart": {
+        "vwhL605ygk": 35,
+        "PuVaWLKeQK": 1
+      }
+    },
+    {
+      "id": "lwFpy56cYL",
+      "total": 0,
+      "cart": {}
     }
   ]
 }
