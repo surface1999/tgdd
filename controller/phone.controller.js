@@ -1,6 +1,6 @@
 const db = require('../db');
 
-let title = "Hãng sản xuất:   ";
+
 let phone = {
     name: 'Phone',
     link: '/phone'
@@ -53,7 +53,7 @@ module.exports.brand = (req, res) =>{
     let urls = [
         phone,
         {
-            name: brand,
+            name: brand[0].toUpperCase() + brand.replace(brand[0], ''),
             link: '/phone/' + brand
         }
     ];
@@ -68,145 +68,13 @@ module.exports.brand = (req, res) =>{
     res.render('brand-filter', {    
                                     isActive: brand,
                                     urls: urls,
-                                    brand: title + brand,
+                                    brand: 'Hãng sản xuất: ' + brand,
                                     products: products,
                                     priceActive: q !== undefined? q: '',
                                     totalCart: totalCart 
                                 }
                 );
 }
-
-// module.exports.iphone = (req, res) =>{
-//     let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
-//     let urls = [
-//         phone,
-//         {
-//             name: 'Iphone',
-//             link: '/phone/iphone'
-//         }
-
-//     ];
-//     let products = db.get('products').value().filter((product)=>{
-//         return product.name.toLowerCase().indexOf('iphone') !== -1;
-//     });
-//     let q = req.query.q;
-//     if(q){
-//         products = filterPrice(q, products);
-//     }
-//     res.render('brand-filter', { 
-//                                     isActive: 'iphone',
-//                                     urls: urls,
-//                                     brand: title + 'Iphone',
-//                                     products: products,
-//                                     priceActive: q !== undefined? q: '',
-//                                     totalCart: totalCart 
-//                                 });
-// }
-
-// module.exports.oppo = (req, res) =>{
-//     let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
-//     let urls = [
-//         phone,
-//         {
-//             name: 'Oppo',
-//             link: '/phone/oppo'
-//         }
-//     ];
-//     let products = db.get('products').value().filter((product)=>{
-//         return product.name.toLowerCase().indexOf('oppo') !== -1;
-//     });
-//     let q = req.query.q;
-//     if(q){
-//         products = filterPrice(q, products);
-//     }
-//     res.render('brand-filter', {
-//                                     isActive: 'oppo', 
-//                                     urls: urls,
-//                                     brand: title + 'Oppo',
-//                                     products: products,
-//                                     priceActive: q !== undefined? q: '',
-//                                     totalCart: totalCart 
-//                                 });
-// }
-
-// module.exports.vivo = (req, res) =>{
-//     let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
-//     let urls = [
-//         phone,
-//         {
-//             name: 'Vivo',
-//             link: '/phone/vivo'
-//         }
-//     ];
-//     let products = db.get('products').value().filter((product)=>{
-//         return product.name.toLowerCase().indexOf('vivo') !== -1;
-//     });
-//     let q = req.query.q;
-//     if(q){
-//         products = filterPrice(q, products);
-//     }
-//     res.render('brand-filter', { 
-//                                     isActive: 'vivo',
-//                                     urls: urls,
-//                                     brand: title + 'Vivo',
-//                                     products: products,
-//                                     priceActive: q !== undefined? q: '',
-//                                     totalCart: totalCart 
-//                                 });
-// }
-
-// module.exports.huawei = (req, res) =>{
-//     let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
-//     let urls = [
-//         phone,
-//         {
-//             name: 'Huawei',
-//             link: '/phone/huawei'
-//         }
-//     ];
-//     let products = db.get('products').value().filter((product)=>{
-//         return product.name.toLowerCase().indexOf('huawei') !== -1;
-//     });
-//     let q = req.query.q;
-//     if(q){
-//         products = filterPrice(q, products);
-//     }
-//     res.render('brand-filter', { 
-//                                     isActive: 'huawei',
-//                                     urls: urls,
-//                                     brand: title + 'Huawei',
-//                                     products: products,
-//                                     priceActive: q !== undefined? q: '',
-//                                     totalCart: totalCart 
-//                                 });
-// }
-
-// module.exports.realme = (req, res) =>{
-//     let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
-//     let urls = [
-//         phone,
-//         {
-//             name: 'Realme',
-//             link: '/phone/realme'
-//         }
-//     ];
-//     let products = db.get('products').value().filter((product)=>{
-//         return product.name.toLowerCase().indexOf('realme') !== -1;
-//     });
-//     let q = req.query.q;
-//     if(q){
-//         products = filterPrice(q, products);
-//     }
-
-//     res.render('brand-filter', { 
-//                                     isActive: 'realme',
-//                                     urls: urls,
-//                                     brand: title + 'Realme',
-//                                     products: products,
-//                                     priceActive: q !== undefined? q: '',
-//                                     totalCart: totalCart 
-//                                 });
-// }
 
 module.exports.phone = (req, res) =>{
     let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
