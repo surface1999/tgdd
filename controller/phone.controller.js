@@ -47,17 +47,18 @@ filterPrice = (q, products) => {
             break;   
     }
 }
-module.exports.samsung = (req, res) =>{
+module.exports.brand = (req, res) =>{
     let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
+    let brand = req.path.replace('/', '');
     let urls = [
         phone,
         {
-            name: 'Samsung',
-            link: '/phone/samsung'
+            name: brand,
+            link: '/phone/' + brand
         }
     ];
     let products = db.get('products').value().filter((product)=>{
-        return product.name.toLowerCase().indexOf('samsung') !== -1;
+        return product.name.toLowerCase().indexOf(brand) !== -1;
     });
     let q = req.query.q;
     if(q){
@@ -65,9 +66,9 @@ module.exports.samsung = (req, res) =>{
     }
 
     res.render('brand-filter', {    
-                                    isActive: 'samsung',
+                                    isActive: brand,
                                     urls: urls,
-                                    brand: title + 'Samsung',
+                                    brand: title + brand,
                                     products: products,
                                     priceActive: q !== undefined? q: '',
                                     totalCart: totalCart 
@@ -75,132 +76,152 @@ module.exports.samsung = (req, res) =>{
                 );
 }
 
-module.exports.iphone = (req, res) =>{
+// module.exports.iphone = (req, res) =>{
+//     let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
+//     let urls = [
+//         phone,
+//         {
+//             name: 'Iphone',
+//             link: '/phone/iphone'
+//         }
+
+//     ];
+//     let products = db.get('products').value().filter((product)=>{
+//         return product.name.toLowerCase().indexOf('iphone') !== -1;
+//     });
+//     let q = req.query.q;
+//     if(q){
+//         products = filterPrice(q, products);
+//     }
+//     res.render('brand-filter', { 
+//                                     isActive: 'iphone',
+//                                     urls: urls,
+//                                     brand: title + 'Iphone',
+//                                     products: products,
+//                                     priceActive: q !== undefined? q: '',
+//                                     totalCart: totalCart 
+//                                 });
+// }
+
+// module.exports.oppo = (req, res) =>{
+//     let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
+//     let urls = [
+//         phone,
+//         {
+//             name: 'Oppo',
+//             link: '/phone/oppo'
+//         }
+//     ];
+//     let products = db.get('products').value().filter((product)=>{
+//         return product.name.toLowerCase().indexOf('oppo') !== -1;
+//     });
+//     let q = req.query.q;
+//     if(q){
+//         products = filterPrice(q, products);
+//     }
+//     res.render('brand-filter', {
+//                                     isActive: 'oppo', 
+//                                     urls: urls,
+//                                     brand: title + 'Oppo',
+//                                     products: products,
+//                                     priceActive: q !== undefined? q: '',
+//                                     totalCart: totalCart 
+//                                 });
+// }
+
+// module.exports.vivo = (req, res) =>{
+//     let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
+//     let urls = [
+//         phone,
+//         {
+//             name: 'Vivo',
+//             link: '/phone/vivo'
+//         }
+//     ];
+//     let products = db.get('products').value().filter((product)=>{
+//         return product.name.toLowerCase().indexOf('vivo') !== -1;
+//     });
+//     let q = req.query.q;
+//     if(q){
+//         products = filterPrice(q, products);
+//     }
+//     res.render('brand-filter', { 
+//                                     isActive: 'vivo',
+//                                     urls: urls,
+//                                     brand: title + 'Vivo',
+//                                     products: products,
+//                                     priceActive: q !== undefined? q: '',
+//                                     totalCart: totalCart 
+//                                 });
+// }
+
+// module.exports.huawei = (req, res) =>{
+//     let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
+//     let urls = [
+//         phone,
+//         {
+//             name: 'Huawei',
+//             link: '/phone/huawei'
+//         }
+//     ];
+//     let products = db.get('products').value().filter((product)=>{
+//         return product.name.toLowerCase().indexOf('huawei') !== -1;
+//     });
+//     let q = req.query.q;
+//     if(q){
+//         products = filterPrice(q, products);
+//     }
+//     res.render('brand-filter', { 
+//                                     isActive: 'huawei',
+//                                     urls: urls,
+//                                     brand: title + 'Huawei',
+//                                     products: products,
+//                                     priceActive: q !== undefined? q: '',
+//                                     totalCart: totalCart 
+//                                 });
+// }
+
+// module.exports.realme = (req, res) =>{
+//     let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
+//     let urls = [
+//         phone,
+//         {
+//             name: 'Realme',
+//             link: '/phone/realme'
+//         }
+//     ];
+//     let products = db.get('products').value().filter((product)=>{
+//         return product.name.toLowerCase().indexOf('realme') !== -1;
+//     });
+//     let q = req.query.q;
+//     if(q){
+//         products = filterPrice(q, products);
+//     }
+
+//     res.render('brand-filter', { 
+//                                     isActive: 'realme',
+//                                     urls: urls,
+//                                     brand: title + 'Realme',
+//                                     products: products,
+//                                     priceActive: q !== undefined? q: '',
+//                                     totalCart: totalCart 
+//                                 });
+// }
+
+module.exports.phone = (req, res) =>{
     let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
     let urls = [
         phone,
-        {
-            name: 'Iphone',
-            link: '/phone/iphone'
-        }
-
     ];
-    let products = db.get('products').value().filter((product)=>{
-        return product.name.toLowerCase().indexOf('iphone') !== -1;
-    });
+    let products = db.get('products').value();
     let q = req.query.q;
     if(q){
         products = filterPrice(q, products);
     }
     res.render('brand-filter', { 
-                                    isActive: 'iphone',
+                                    isActive: 'phone',
                                     urls: urls,
-                                    brand: title + 'Iphone',
-                                    products: products,
-                                    priceActive: q !== undefined? q: '',
-                                    totalCart: totalCart 
-                                });
-}
-
-module.exports.oppo = (req, res) =>{
-    let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
-    let urls = [
-        phone,
-        {
-            name: 'Oppo',
-            link: '/phone/oppo'
-        }
-    ];
-    let products = db.get('products').value().filter((product)=>{
-        return product.name.toLowerCase().indexOf('oppo') !== -1;
-    });
-    let q = req.query.q;
-    if(q){
-        products = filterPrice(q, products);
-    }
-    res.render('brand-filter', {
-                                    isActive: 'oppo', 
-                                    urls: urls,
-                                    brand: title + 'Oppo',
-                                    products: products,
-                                    priceActive: q !== undefined? q: '',
-                                    totalCart: totalCart 
-                                });
-}
-
-module.exports.vivo = (req, res) =>{
-    let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
-    let urls = [
-        phone,
-        {
-            name: 'Vivo',
-            link: '/phone/vivo'
-        }
-    ];
-    let products = db.get('products').value().filter((product)=>{
-        return product.name.toLowerCase().indexOf('vivo') !== -1;
-    });
-    let q = req.query.q;
-    if(q){
-        products = filterPrice(q, products);
-    }
-    res.render('brand-filter', { 
-                                    isActive: 'vivo',
-                                    urls: urls,
-                                    brand: title + 'Vivo',
-                                    products: products,
-                                    priceActive: q !== undefined? q: '',
-                                    totalCart: totalCart 
-                                });
-}
-
-module.exports.huawei = (req, res) =>{
-    let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
-    let urls = [
-        phone,
-        {
-            name: 'Huawei',
-            link: '/phone/huawei'
-        }
-    ];
-    let products = db.get('products').value().filter((product)=>{
-        return product.name.toLowerCase().indexOf('huawei') !== -1;
-    });
-    let q = req.query.q;
-    if(q){
-        products = filterPrice(q, products);
-    }
-    res.render('brand-filter', { 
-                                    isActive: 'huawei',
-                                    urls: urls,
-                                    brand: title + 'Huawei',
-                                    products: products,
-                                    priceActive: q !== undefined? q: '',
-                                    totalCart: totalCart 
-                                });
-}
-
-module.exports.realme = (req, res) =>{
-    let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
-    let urls = [
-        phone,
-        {
-            name: 'Realme',
-            link: '/phone/realme'
-        }
-    ];
-    let products = db.get('products').value().filter((product)=>{
-        return product.name.toLowerCase().indexOf('realme') !== -1;
-    });
-    let q = req.query.q;
-    if(q){
-        products = filterPrice(q, products);
-    }
-
-    res.render('brand-filter', { 
-                                    isActive: 'realme',
-                                    urls: urls,
-                                    brand: title + 'Realme',
+                                    brand: 'Smart Phone',
                                     products: products,
                                     priceActive: q !== undefined? q: '',
                                     totalCart: totalCart 
@@ -232,22 +253,3 @@ module.exports.search = (req, res) =>{
                                 });
 }
 
-module.exports.phone = (req, res) =>{
-    let totalCart = db.get('session').find({id: res.locals.sessionId}).get('total').value();
-    let urls = [
-        phone,
-    ];
-    let products = db.get('products').value();
-    let q = req.query.q;
-    if(q){
-        products = filterPrice(q, products);
-    }
-    res.render('brand-filter', { 
-                                    isActive: 'phone',
-                                    urls: urls,
-                                    brand: 'Smart Phone',
-                                    products: products,
-                                    priceActive: q !== undefined? q: '',
-                                    totalCart: totalCart 
-                                });
-}
